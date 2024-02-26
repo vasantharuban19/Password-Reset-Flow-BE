@@ -42,8 +42,12 @@ const signup = async(req,res)=>{
             password:hash
         }) 
         await newUser.save()
+        let userData = await UserModel.findOne(
+            {email:req.body.email},
+            {_id:0,email:0,password:0,status:0,createdAt:0}
+        )
         res.status(201).json({
-            message:"User created successfully"
+            message:"User created successfully",userData
         })
     }
     catch{
