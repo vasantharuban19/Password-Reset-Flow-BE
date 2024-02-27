@@ -26,7 +26,7 @@ const validate = (route)=>{
         body("OTP").notEmpty().withMessage("OTP is required"),
         body("password")
           .isLength({ min: 8 })
-          .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{12,}$/)
+          .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$/)
           .withMessage(
             "Password must be at least 8 characters long and contain at least one digit, one lowercase and one uppercase letter, and one special character (@#$%^&+=)"
           ),

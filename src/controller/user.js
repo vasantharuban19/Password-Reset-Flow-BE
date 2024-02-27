@@ -85,7 +85,8 @@ const login = async(req,res)=>{
             firstName:user.firstName,
             lastName:user.lastName,
             email:user.email,
-            role:user.role
+            role:user.role,
+            createdAt:user.createdAt
         },'10m')
         let userData = await UserModel.findOne(
             {email:req.body.email},
